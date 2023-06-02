@@ -14,7 +14,7 @@ type Zeit struct {
 	Hundertstel int
 }
 
-func (z *Zeit) getDuration() time.Duration {
+func (z *Zeit) GetDuration() time.Duration {
 	d, _ := time.ParseDuration(
 		strconv.Itoa(z.Stunde) + "h" +
 			strconv.Itoa(z.Minute) + "m" +
@@ -23,7 +23,7 @@ func (z *Zeit) getDuration() time.Duration {
 	return d
 }
 
-func (z *Zeit) getString() string {
+func (z *Zeit) GetString() string {
 	return fmt.Sprintf("%02d", z.Stunde) + ":" +
 		fmt.Sprintf("%02d", z.Minute) + ":" +
 		fmt.Sprintf("%02d", z.Sekunde) + "," +

@@ -12,12 +12,12 @@ type Uhrzeit struct {
 	Minute int
 }
 
-func (u *Uhrzeit) getTime() time.Time {
-	t, _ := time.Parse("15:04", u.getString())
+func (u *Uhrzeit) GetTime() time.Time {
+	t, _ := time.Parse("15:04", u.GetString())
 	return t
 }
 
-func (u *Uhrzeit) getString() string {
+func (u *Uhrzeit) GetString() string {
 	return fmt.Sprintf("%02d", u.Stunde) + ":" + fmt.Sprintf("%02d", u.Minute)
 }
 

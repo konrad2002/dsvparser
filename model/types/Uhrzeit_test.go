@@ -19,17 +19,17 @@ func TestNewUhrzeitWithLeadingZero(t *testing.T) {
 
 func TestUhrzeitGetTime(t *testing.T) {
 	u := NewUhrzeit("14:23")
-	time := u.getTime()
+	time := u.GetTime()
 	assert.Equal(t, 14, time.Hour())
 	assert.Equal(t, 23, time.Minute())
 }
 
 func TestUhrzeitGetString(t *testing.T) {
 	u := NewUhrzeit("15:13")
-	assert.Equal(t, "15:13", u.getString())
+	assert.Equal(t, "15:13", u.GetString())
 }
 
 func TestUhrzeitGetStringWithLeadingZero(t *testing.T) {
 	u := NewUhrzeit("03:01")
-	assert.Equal(t, "03:01", u.getString())
+	assert.Equal(t, "03:01", u.GetString())
 }

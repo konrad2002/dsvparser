@@ -15,13 +15,13 @@ func TestNewZeit(t *testing.T) {
 
 func TestZeitGetString(t *testing.T) {
 	z := NewZeit("01:15:54,87")
-	assert.Equal(t, "01:15:54,87", z.getString())
+	assert.Equal(t, "01:15:54,87", z.GetString())
 }
 
 func TestZeitGetDuration(t *testing.T) {
 	z := NewZeit("01:15:54,87")
-	assert.InDelta(t, 1.265241, z.getDuration().Hours(), 0.001)
-	assert.InDelta(t, 75.91, z.getDuration().Minutes(), 0.1)
-	assert.InDelta(t, 4554.87, z.getDuration().Seconds(), 0.1)
-	assert.Equal(t, int64(4554870), z.getDuration().Milliseconds())
+	assert.InDelta(t, 1.265241, z.GetDuration().Hours(), 0.001)
+	assert.InDelta(t, 75.91, z.GetDuration().Minutes(), 0.1)
+	assert.InDelta(t, 4554.87, z.GetDuration().Seconds(), 0.1)
+	assert.Equal(t, int64(4554870), z.GetDuration().Milliseconds())
 }

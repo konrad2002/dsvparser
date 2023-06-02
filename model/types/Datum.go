@@ -13,12 +13,12 @@ type Datum struct {
 	Jahr  int
 }
 
-func (d *Datum) getTime() time.Time {
-	t, _ := time.Parse("02.01.2006", d.getString())
+func (d *Datum) GetTime() time.Time {
+	t, _ := time.Parse("02.01.2006", d.GetString())
 	return t
 }
 
-func (d *Datum) getString() string {
+func (d *Datum) GetString() string {
 	return fmt.Sprintf("%02d", d.Tag) + "." + fmt.Sprintf("%02d", d.Monat) + "." + fmt.Sprintf("%04d", d.Jahr)
 }
 

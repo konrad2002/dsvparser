@@ -14,7 +14,7 @@ func TestNewDatum(t *testing.T) {
 
 func TestDatumGetTime(t *testing.T) {
 	d := NewDatum("16.04.2003")
-	time := d.getTime()
+	time := d.GetTime()
 	assert.Equal(t, 16, time.Day())
 	assert.Equal(t, "April", time.Month().String())
 	assert.Equal(t, 2003, time.Year())
@@ -22,5 +22,5 @@ func TestDatumGetTime(t *testing.T) {
 
 func TestDatumGetString(t *testing.T) {
 	d := NewDatum("16.04.2003")
-	assert.Equal(t, "16.04.2003", d.getString())
+	assert.Equal(t, "16.04.2003", d.GetString())
 }
