@@ -28,7 +28,13 @@ Im Rahmen der Entwicklung von [SwimResults](https://swimresults.de) kam Bedarf f
 
 ## 📄 Changelogs
 
+### v0.0.2
+
+- Weitere Datentypen: Geschlecht, Kampfgericht Position, Meldegeld Typ und Wertungsklasse
+- Model für "Elemente" des Formats "Wettkampfergebnisliste"
+- vorerst KEINE Unterstützung für Staffelergebnisse
+
 ### v0.0.1
 
 - initiale Implementierung der Datentypen des DSV7 Standards (Datum, Uhrzeit und Zeit).
-- Model für alle "Elemente" der Formate "Wettkampfdefinitionsliste" und "Wettkampfergebnisliste"
+- Model für alle "Elemente" des Formats "Wettkampfdefinitionsliste"
