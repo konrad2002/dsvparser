@@ -1,5 +1,7 @@
 # 📝 dsvparser
 
+<img src="dsvparser.png" align="right" alt="dsvparser logo" width="200">
+
 Dieses Go "Package" enthält einen Parser für das Datenaustauschdateiformat des Deutschen Schwimm-Verband e.V. (DSV).
 Die aktuelle Version soll die Standards DSV6 und DSV7 unterstützen.
 
