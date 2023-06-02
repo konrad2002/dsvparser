@@ -1,5 +1,7 @@
 # 📝 dsvparser
 
+[![Go](https://github.com/konrad2002/dsvparser/actions/workflows/go.yml/badge.svg)](https://github.com/konrad2002/dsvparser/actions/workflows/go.yml)
+
 <img src="dsvparser.png" align="right" alt="dsvparser logo" width="200">
 
 Dieses Go "Package" enthält einen Parser für das Datenaustauschdateiformat des Deutschen Schwimm-Verband e.V. (DSV).
@@ -30,3 +32,7 @@ Im Rahmen der Entwicklung von [SwimResults](https://swimresults.de) kam Bedarf f
 
 - initiale Implementierung der Datentypen des DSV7 Standards (Datum, Uhrzeit und Zeit).
 - Model für alle "Elemente" der Formate "Wettkampfdefinitionsliste" und "Wettkampfergebnisliste"
+
+--------
+
+© Copyright 2023 - Konrad Weiß
