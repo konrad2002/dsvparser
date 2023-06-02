@@ -1,5 +1,7 @@
 package elements
 
+import "dsvparser/model/types"
+
 type Wettkampf struct {
 	Wettkampfnummer               int
 	Wettkampfart                  rune
@@ -8,7 +10,7 @@ type Wettkampf struct {
 	Einzelstrecke                 int
 	Technik                       rune
 	Ausuebung                     string
-	Geschlecht                    rune
+	Geschlecht                    types.Geschlecht
 	ZuordnungBestenliste          string
 	Qualifikationswettkampfnummer int
 	Qualifikationswettkampfart    rune

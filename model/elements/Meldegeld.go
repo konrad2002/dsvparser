@@ -1,0 +1,7 @@
+package elements
+
+type Meldegeld struct {
+	MeldegeldTyp    string
+	Betrag          string
+	Wettkampfnummer int
+}
