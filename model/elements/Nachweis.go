@@ -1,7 +1,7 @@
 package elements
 
 import (
-	"dsvparser/model/types"
+	"github.com/konrad2002/dsvparser/model/types"
 )
 
 type Nachweis struct {

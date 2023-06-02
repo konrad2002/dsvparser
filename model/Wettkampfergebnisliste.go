@@ -1,6 +1,6 @@
 package model
 
-import "dsvparser/model/elements"
+import "github.com/konrad2002/dsvparser/model/elements"
 
 type Wettkampfergebnisliste struct {
 	Format            elements.Format

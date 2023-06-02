@@ -1,4 +1,4 @@
-module dsvparser
+module github.com/konrad2002/dsvparser
 
 go 1.19
 

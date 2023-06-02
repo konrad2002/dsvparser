@@ -1,6 +1,6 @@
 package elements
 
-import "dsvparser/model/types"
+import "github.com/konrad2002/dsvparser/model/types"
 
 type Wertung struct {
 	Wettkampfnummer int
