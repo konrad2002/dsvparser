@@ -28,6 +28,10 @@ Im Rahmen der Entwicklung von [SwimResults](https://swimresults.de) kam Bedarf f
 
 ## 📄 Changelogs
 
+### v0.0.3
+
+- make importable using `import "github.com/konrad2002/dsvparser"`
+
 ### v0.0.2
 
 - Weitere Datentypen: Geschlecht, Kampfgericht Position, Meldegeld Typ und Wertungsklasse
