@@ -1,4 +1,4 @@
-package dsvparser
+package main
 
 type Token int
 
