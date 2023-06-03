@@ -9,3 +9,5 @@ type Nachweis struct {
 	NachweisBis types.Datum
 	Bahnlaenge  string
 }
+
+// TODO constructor

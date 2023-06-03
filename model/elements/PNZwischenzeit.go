@@ -9,3 +9,5 @@ type PNZwischenzeit struct {
 	Distanz                   int
 	Zwischenzeit              types.Zeit
 }
+
+// TODO constructor

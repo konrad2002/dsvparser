@@ -5,3 +5,5 @@ type Meldegeld struct {
 	Betrag          string
 	Wettkampfnummer int
 }
+
+// TODO constructor

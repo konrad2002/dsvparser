@@ -15,3 +15,5 @@ type Wettkampf struct {
 	Qualifikationswettkampfnummer int
 	Qualifikationswettkampfart    rune
 }
+
+// TODO constructor

@@ -2,6 +2,7 @@ package types
 
 import (
 	"fmt"
+	"regexp"
 	"strconv"
 	"strings"
 	"time"
@@ -14,7 +15,7 @@ type Zeit struct {
 	Hundertstel int
 }
 
-func (z *Zeit) GetDuration() time.Duration {
+func (z *Zeit) Duration() time.Duration {
 	d, _ := time.ParseDuration(
 		strconv.Itoa(z.Stunde) + "h" +
 			strconv.Itoa(z.Minute) + "m" +
@@ -23,14 +24,19 @@ func (z *Zeit) GetDuration() time.Duration {
 	return d
 }
 
-func (z *Zeit) GetString() string {
+func (z *Zeit) String() string {
 	return fmt.Sprintf("%02d", z.Stunde) + ":" +
 		fmt.Sprintf("%02d", z.Minute) + ":" +
 		fmt.Sprintf("%02d", z.Sekunde) + "," +
 		fmt.Sprintf("%02d", z.Hundertstel)
 }
 
-func NewZeit(value string) Zeit {
+func NewZeit(value string) (Zeit, error) {
+	ok, err := regexp.MatchString("\\d\\d:\\d\\d:\\d\\d,\\d\\d", value)
+	if !ok || err != nil {
+		return Zeit{}, fmt.Errorf("zeit ist nicht in der Form 'dd:dd:dd,dd'")
+	}
+
 	var zeit Zeit
 	var i = strings.Index(value, ":")
 	zeit.Stunde, _ = strconv.Atoi(value[:i])
@@ -41,5 +47,5 @@ func NewZeit(value string) Zeit {
 	i = strings.Index(value, ",")
 	zeit.Sekunde, _ = strconv.Atoi(value[:i])
 	zeit.Hundertstel, _ = strconv.Atoi(value[i+1:])
-	return zeit
+	return zeit, nil
 }

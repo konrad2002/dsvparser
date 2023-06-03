@@ -1,6 +1,10 @@
 package main
 
-import "io"
+import (
+	"fmt"
+	"github.com/konrad2002/dsvparser/model/elements"
+	"io"
+)
 
 type Parser struct {
 	s   *Scanner
@@ -15,7 +19,22 @@ func NewParser(r io.Reader) *Parser {
 	return &Parser{s: NewScanner(r)}
 }
 
-// should be called for a single line inside a dsv file
-func (p *Parser) Parse() (interface{}, error) {
-	return nil, nil
+// Parse receives token and literal from scanner and wraps it inside element model
+func (p *Parser) Parse() (el interface{}, err error) {
+	tok, lits := p.s.Scan()
+	if tok == ILLEGAL {
+		return nil, fmt.Errorf("scanned illegal token")
+	}
+
+	switch tok {
+	case ABSCHNITT:
+		el, err = elements.NewAbschnitt(lits)
+	case AUSRICHTER:
+		el, err = elements.NewAusrichter(lits)
+		// TODO fehlende Elemente
+	default:
+		el = nil
+		err = fmt.Errorf("unbekannter Token nach Scan")
+	}
+	return el, err
 }

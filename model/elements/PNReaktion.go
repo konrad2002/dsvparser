@@ -9,3 +9,5 @@ type PNReaktion struct {
 	Art                       rune
 	Reaktionszeit             types.Zeit
 }
+
+// TODO constructor

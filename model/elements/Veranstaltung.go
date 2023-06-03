@@ -6,3 +6,5 @@ type Veranstaltung struct {
 	Bahnlaenge                string
 	Zeitmessung               string
 }
+
+// TODO constructor

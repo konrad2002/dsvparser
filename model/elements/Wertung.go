@@ -12,3 +12,5 @@ type Wertung struct {
 	Geschlecht      types.Geschlecht
 	Wertungsname    string
 }
+
+// TODO constructor

@@ -6,3 +6,5 @@ type Verein struct {
 	Landesschwimmverband int
 	FinaNationenkuerzel  string
 }
+
+// TODO constructor

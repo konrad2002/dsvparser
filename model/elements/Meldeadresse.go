@@ -10,3 +10,5 @@ type Meldeadresse struct {
 	Fax     string
 	Email   string
 }
+
+// TODO constructor

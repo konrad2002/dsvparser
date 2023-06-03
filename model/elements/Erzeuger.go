@@ -5,3 +5,5 @@ type Erzeuger struct {
 	Version  string
 	Kontakt  string
 }
+
+// TODO constructor

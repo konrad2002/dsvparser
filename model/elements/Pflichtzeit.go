@@ -11,3 +11,5 @@ type Pflichtzeit struct {
 	Pflichtzeit     types.Zeit
 	Geschlecht      types.Geschlecht
 }
+
+// TODO constructor

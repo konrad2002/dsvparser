@@ -6,3 +6,5 @@ type Meldeschluss struct {
 	Datum   types.Datum
 	Uhrzeit types.Uhrzeit
 }
+
+// TODO constructor

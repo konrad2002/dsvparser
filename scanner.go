@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"io"
 )
 
@@ -25,34 +26,57 @@ func (s *Scanner) unread() {
 	_ = s.r.UnreadRune()
 }
 
-// Scan returns the next token and literal value.
-func (s *Scanner) Scan() (tok Token, lit string) {
-	// Read the next rune.
-	ch := s.read()
+// Scan returns the next token and all following literal values.
+func (s *Scanner) Scan() (tok Token, lit []string) {
 
-	// If we see whitespace then consume all contiguous whitespace.
-	// If we see a letter then consume as an ident or reserved word.
-	if isSemicolon(ch) {
-		s.unread()
-		//return s.scanWhitespace()
-	} else if isLetter(ch) {
-		s.unread()
-		//return s.scanIdent()
+	lc := ' '
+	ch := ' '
+	var buf bytes.Buffer
+
+	// read token
+	for {
+		if ch = s.read(); ch == eof {
+			return EOF, nil
+		}
+		if ch == ':' {
+			break
+		}
+		if ch == '*' && lc == '(' {
+			for {
+				if ch = s.read(); ch == eof || ch == '\n' {
+					return COMMENT, nil
+				}
+			}
+		}
+
+		buf.WriteRune(ch)
+		lc = ch
 	}
 
-	// Otherwise read the individual character.
-	switch ch {
-	case eof:
-		return EOF, ""
-	case ';':
-		return SEMICOLON, string(ch)
+	tok = NewToken(buf.String())
+
+	buf.Reset()
+
+	// read attributes
+	for {
+		if ch = s.read(); ch == eof {
+			break
+		}
+		if ch == '\n' {
+			break
+		}
+
+		if isSemicolon(ch) {
+			lit = append(lit, buf.String())
+			buf.Reset()
+			continue
+		}
+
+		buf.WriteRune(ch)
+
 	}
 
-	return ILLEGAL, string(ch)
-}
-
-func isLetter(ch rune) bool {
-	return (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')
+	return tok, lit
 }
 
 func isSemicolon(ch rune) bool {
