@@ -7,12 +7,7 @@ import (
 )
 
 type Parser struct {
-	s   *Scanner
-	buf struct {
-		tok Token  // last read token
-		lit string // last read literal
-		n   int    // buffer size (max=1)
-	}
+	s *Scanner
 }
 
 func NewParser(r io.Reader) *Parser {
@@ -31,7 +26,13 @@ func (p *Parser) Parse() (el interface{}, err error) {
 		el, err = elements.NewAbschnitt(lits)
 	case AUSRICHTER:
 		el, err = elements.NewAusrichter(lits)
-		// TODO fehlende Elemente
+	case FORMAT:
+		el, err = elements.NewFormat(lits)
+	// TODO fehlende Elemente
+	case COMMENT:
+		el, err = nil, nil
+	case EOF:
+		el, err = nil, fmt.Errorf("unerwartetes dateiende")
 	default:
 		el = nil
 		err = fmt.Errorf("unbekannter Token nach Scan")
