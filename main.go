@@ -8,10 +8,10 @@ import (
 )
 
 func main() {
-	exampleUsage()
+	BeispielNutzung()
 }
 
-func exampleUsage() {
+func BeispielNutzung() {
 	dat, err := os.ReadFile("assets/definition.dsv7")
 	if err != nil {
 		panic(err)
@@ -23,5 +23,5 @@ func exampleUsage() {
 		panic(err)
 	}
 	def := res.(*model.Wettkampfdefinitionsliste)
-	fmt.Printf("%+v\n", def)
+	fmt.Printf(def.Veranstaltungsort.PLZ)
 }
