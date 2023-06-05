@@ -36,6 +36,9 @@ func (s *Scanner) Scan() (tok Token, lit []string) {
 	// read token
 	for {
 		if ch = s.read(); ch == eof {
+			if NewToken(buf.String()) == DATEIENDE {
+				return DATEIENDE, nil
+			}
 			return EOF, nil
 		}
 		if ch == ':' {

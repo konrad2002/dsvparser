@@ -8,15 +8,15 @@ import (
 )
 
 type Reader struct {
-	p *Parser
+	p      *Parser
+	format elements.Format
 }
 
 func NewReader(r io.Reader) *Reader {
 	return &Reader{p: NewParser(r)}
 }
 
-func (r *Reader) Read() (interface{}, error) {
-	var format elements.Format
+func (r *Reader) Read() (model.Liste, error) {
 	// skip comments and read format
 	f := false
 	for f == false {
@@ -32,22 +32,24 @@ func (r *Reader) Read() (interface{}, error) {
 
 		switch ele := el.(type) {
 		case elements.Format:
-			format = ele
+			r.format = ele
 			f = true
 		default:
 			return nil, fmt.Errorf("datei beginnt nicht mit FORMAT Element")
 		}
 	}
 
-	if format.Version != 6 && format.Version != 7 {
+	if r.format.Version != 6 && r.format.Version != 7 {
 		return nil, fmt.Errorf("version der Datei wird nicht unterstützt")
 	}
 
-	switch format.Listart {
+	var list model.Liste
+
+	switch r.format.Listart {
 	case "Wettkampfdefinitionsliste":
-		return r.readDefinitionsliste()
+		list = &model.Wettkampfdefinitionsliste{}
 	case "Wettkampfergebnisliste":
-		return r.readErgebnisliste()
+		list = &model.Wettkampfergebnisliste{}
 	case "Vereinsmeldeliste":
 		return nil, fmt.Errorf("nicht implementiert")
 	case "Vereinsergebnisliste":
@@ -55,14 +57,30 @@ func (r *Reader) Read() (interface{}, error) {
 	default:
 		return nil, fmt.Errorf("ungültige Listart")
 	}
+	list.AddElement(r.format)
+	return r.readRestOfFile(list)
 }
 
-func (r *Reader) readDefinitionsliste() (model.Wettkampfdefinitionsliste, error) {
-	// TODO parsen fortsetzen und Liste vervollständigen
-	return model.Wettkampfdefinitionsliste{}, nil
-}
+func (r *Reader) readRestOfFile(list model.Liste) (res model.Liste, err error) {
+	res = list
+	for {
+		el, err := r.p.Parse()
+		if err != nil {
+			fmt.Printf("error\n")
+			return res, err
+		}
 
-func (r *Reader) readErgebnisliste() (model.Wettkampfergebnisliste, error) {
-	// TODO parsen fortsetzen und Liste vervollständigen
-	return model.Wettkampfergebnisliste{}, nil
+		// comment
+		if el == nil {
+			fmt.Printf("comment\n")
+			continue
+		}
+
+		switch el.(type) {
+		case elements.Dateiende:
+			return res, nil
+		default:
+			res.AddElement(el)
+		}
+	}
 }

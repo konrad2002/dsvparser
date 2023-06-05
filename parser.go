@@ -29,6 +29,8 @@ func (p *Parser) Parse() (el interface{}, err error) {
 	case FORMAT:
 		el, err = elements.NewFormat(lits)
 	// TODO fehlende Elemente
+	case DATEIENDE:
+		el, err = elements.NewDateiende()
 	case COMMENT:
 		el, err = nil, nil
 	case EOF:
