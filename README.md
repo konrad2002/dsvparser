@@ -18,9 +18,9 @@ Gegenwärtig werden folgende Listentypen und DSV Dateiversionen unterstützt
 
 | **Listenart**             | **DSV6** | **DSV7** |
 |---------------------------|----------|----------|
-| Wettkampfdefinitionsliste | 🟩       | 🟩       |
+| Wettkampfdefinitionsliste | 🟦       | 🟩       |
 | Vereinsmeldeliste         | 🟥       | 🟥       |
-| Wettkampfergebnisliste    | 🟦       | 🟨       |
+| Wettkampfergebnisliste    | 🟨       | 🟨       |
 | Vereinsergebnisliste      | 🟥       | 🟥       |
 
 - 🟩 - unterstützt (getestet)
