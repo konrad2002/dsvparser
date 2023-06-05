@@ -28,6 +28,14 @@ Im Rahmen der Entwicklung von [SwimResults](https://swimresults.de) kam Bedarf f
 
 ## 📄 Changelogs
 
+### v1.0.0
+
+- erste funktionsfähige Vollversion
+- Unterstützt Wettkampfdefinitionslisten und Wettkampfergebnislisten
+- kann dieser aus Buffer parsen
+- keine Unterstützung für Staffeln
+- keine Unterstützung für Vereinslisten
+
 ### v0.1.0
 
 - erste Implementierung für Parser, Scanner und Reader
