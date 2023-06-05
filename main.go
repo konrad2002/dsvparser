@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/konrad2002/dsvparser/model"
+	"github.com/konrad2002/dsvparser/parser"
 	"os"
 )
 
@@ -17,7 +18,7 @@ func BeispielNutzung() {
 		panic(err)
 	}
 	buf := bytes.NewBuffer(dat)
-	r := NewReader(buf)
+	r := parser.NewReader(buf)
 	res, err := r.Read()
 	if err != nil {
 		panic(err)

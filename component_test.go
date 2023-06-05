@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/konrad2002/dsvparser/model"
 	"github.com/konrad2002/dsvparser/model/types"
+	"github.com/konrad2002/dsvparser/parser"
 	"github.com/stretchr/testify/assert"
 	"os"
 	"strings"
@@ -17,7 +18,7 @@ func Test_StandardExample_Definitionsliste(t *testing.T) {
 		panic(err)
 	}
 	buf := bytes.NewBuffer(dat)
-	r := NewReader(buf)
+	r := parser.NewReader(buf)
 	res, _ := r.Read()
 	def := res.(*model.Wettkampfdefinitionsliste)
 	assert.Equal(t, 7, def.Format.Version)
@@ -31,7 +32,7 @@ func Test_StandardExample_Ergebnisliste(t *testing.T) {
 		panic(err)
 	}
 	buf := bytes.NewBuffer(dat)
-	r := NewReader(buf)
+	r := parser.NewReader(buf)
 	res, err := r.Read()
 	if err != nil {
 		fmt.Printf(err.Error())
@@ -48,7 +49,7 @@ func Test_BeispielMarienberg_Ergebnisliste(t *testing.T) {
 		panic(err)
 	}
 	buf := bytes.NewBuffer(dat)
-	r := NewReader(buf)
+	r := parser.NewReader(buf)
 	res, err := r.Read()
 	if err != nil {
 		fmt.Printf(err.Error())

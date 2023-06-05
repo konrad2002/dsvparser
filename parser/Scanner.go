@@ -1,8 +1,9 @@
-package main
+package parser
 
 import (
 	"bufio"
 	"bytes"
+
 	"io"
 )
 
