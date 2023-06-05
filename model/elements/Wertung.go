@@ -21,7 +21,7 @@ type Wertung struct {
 func NewWertung(lits []string) (Wertung, error) {
 	args := 8
 	if len(lits) != args {
-		return Wertung{}, fmt.Errorf("zu wenig Argumente für WERTUNG, %d statt %d", len(lits), args)
+		return Wertung{}, fmt.Errorf("falsche Anzahl an Argumenten für WERTUNG, %d statt %d", len(lits), args)
 	}
 	var el Wertung
 	var err1, err2, err3, err4 error

@@ -18,7 +18,7 @@ type PNZwischenzeit struct {
 func NewPNZwischenzeit(lits []string) (PNZwischenzeit, error) {
 	args := 5
 	if len(lits) != args {
-		return PNZwischenzeit{}, fmt.Errorf("zu wenig Argumente für PNZWISCHENZEIT, %d statt %d", len(lits), args)
+		return PNZwischenzeit{}, fmt.Errorf("falsche Anzahl an Argumenten für PNZWISCHENZEIT, %d statt %d", len(lits), args)
 	}
 	var el PNZwischenzeit
 	var err1, err2, err3, err4 error

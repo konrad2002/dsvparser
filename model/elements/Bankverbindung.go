@@ -13,7 +13,7 @@ type Bankverbindung struct {
 func NewBankverbindung(lits []string) (Bankverbindung, error) {
 	args := 3
 	if len(lits) != args {
-		return Bankverbindung{}, fmt.Errorf("zu wenig Argumente für BANKVERBINDUNG, %d statt %d", len(lits), args)
+		return Bankverbindung{}, fmt.Errorf("falsche Anzahl an Argumenten für BANKVERBINDUNG, %d statt %d", len(lits), args)
 	}
 	var el Bankverbindung
 	el.NameBank = lits[0]

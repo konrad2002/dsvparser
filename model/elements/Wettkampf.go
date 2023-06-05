@@ -24,7 +24,7 @@ type Wettkampf struct {
 func NewWettkampf(lits []string) (Wettkampf, error) {
 	args := 11
 	if len(lits) != args {
-		return Wettkampf{}, fmt.Errorf("zu wenig Argumente für WETTKAMPF, %d statt %d", len(lits), args)
+		return Wettkampf{}, fmt.Errorf("falsche Anzahl an Argumenten für WETTKAMPF, %d statt %d", len(lits), args)
 	}
 	var el Wettkampf
 	var err1, err2, err3, err4, err5 error

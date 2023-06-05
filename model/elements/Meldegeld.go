@@ -14,7 +14,7 @@ type Meldegeld struct {
 func NewMeldegeld(lits []string) (Meldegeld, error) {
 	args := 3
 	if len(lits) != args {
-		return Meldegeld{}, fmt.Errorf("zu wenig Argumente für MELDEGELD, %d statt %d", len(lits), args)
+		return Meldegeld{}, fmt.Errorf("falsche Anzahl an Argumenten für MELDEGELD, %d statt %d", len(lits), args)
 	}
 	var el Meldegeld
 	el.MeldegeldTyp = lits[0]

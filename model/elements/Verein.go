@@ -16,7 +16,7 @@ type Verein struct {
 func NewVerein(lits []string) (Verein, error) {
 	args := 4
 	if len(lits) != args {
-		return Verein{}, fmt.Errorf("zu wenig Argumente für VEREIN, %d statt %d", len(lits), args)
+		return Verein{}, fmt.Errorf("falsche Anzahl an Argumenten für VEREIN, %d statt %d", len(lits), args)
 	}
 	var el Verein
 	var err1, err2 error

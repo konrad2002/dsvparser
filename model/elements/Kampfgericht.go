@@ -17,7 +17,7 @@ type Kampfgericht struct {
 func NewKampfgericht(lits []string) (Kampfgericht, error) {
 	args := 4
 	if len(lits) != args {
-		return Kampfgericht{}, fmt.Errorf("zu wenig Argumente für KAMPFGERICHT, %d statt %d", len(lits), args)
+		return Kampfgericht{}, fmt.Errorf("falsche Anzahl an Argumenten für KAMPFGERICHT, %d statt %d", len(lits), args)
 	}
 	var el Kampfgericht
 	var err, err1, err2 error

@@ -12,7 +12,7 @@ type Veranstaltung struct {
 func NewVeranstaltung(lits []string) (Veranstaltung, error) {
 	args := 4
 	if len(lits) != args {
-		return Veranstaltung{}, fmt.Errorf("zu wenig Argumente für VERANSTALTUNG, %d statt %d", len(lits), args)
+		return Veranstaltung{}, fmt.Errorf("falsche Anzahl an Argumenten für VERANSTALTUNG, %d statt %d", len(lits), args)
 	}
 	var el Veranstaltung
 	el.Veranstaltungsbezeichnung = lits[0]

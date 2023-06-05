@@ -14,7 +14,7 @@ type Meldeschluss struct {
 func NewMeldeschluss(lits []string) (Meldeschluss, error) {
 	args := 2
 	if len(lits) != args {
-		return Meldeschluss{}, fmt.Errorf("zu wenig Argumente für MELDESCHLUSS, %d statt %d", len(lits), args)
+		return Meldeschluss{}, fmt.Errorf("falsche Anzahl an Argumenten für MELDESCHLUSS, %d statt %d", len(lits), args)
 	}
 	var el Meldeschluss
 	var err1, err2 error

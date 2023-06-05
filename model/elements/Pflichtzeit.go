@@ -20,7 +20,7 @@ type Pflichtzeit struct {
 func NewPflichtzeit(lits []string) (Pflichtzeit, error) {
 	args := 7
 	if len(lits) != args {
-		return Pflichtzeit{}, fmt.Errorf("zu wenig Argumente für PFLICHTZEIT, %d statt %d", len(lits), args)
+		return Pflichtzeit{}, fmt.Errorf("falsche Anzahl an Argumenten für PFLICHTZEIT, %d statt %d", len(lits), args)
 	}
 	var el Pflichtzeit
 	var err1, err2, err3 error

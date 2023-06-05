@@ -18,7 +18,7 @@ type PNReaktion struct {
 func NewPNReaktion(lits []string) (PNReaktion, error) {
 	args := 5
 	if len(lits) != args {
-		return PNReaktion{}, fmt.Errorf("zu wenig Argumente für PNREAKTION, %d statt %d", len(lits), args)
+		return PNReaktion{}, fmt.Errorf("falsche Anzahl an Argumenten für PNREAKTION, %d statt %d", len(lits), args)
 	}
 	var el PNReaktion
 	var err1, err2, err3 error

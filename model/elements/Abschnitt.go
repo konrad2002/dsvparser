@@ -19,7 +19,7 @@ type Abschnitt struct {
 func NewAbschnitt(lits []string) (Abschnitt, error) {
 	args := 6
 	if len(lits) != args {
-		return Abschnitt{}, fmt.Errorf("zu wenig Argumente für ABSCHNITT, %d statt %d", len(lits), args)
+		return Abschnitt{}, fmt.Errorf("falsche Anzahl an Argumenten für ABSCHNITT, %d statt %d", len(lits), args)
 	}
 	var el Abschnitt
 	var err, err1, err2 error

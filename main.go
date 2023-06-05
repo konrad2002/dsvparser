@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-	fmt.Printf("nothing implemented for now...")
 	exampleUsage()
 }
 

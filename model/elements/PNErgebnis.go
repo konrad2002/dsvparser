@@ -33,7 +33,7 @@ func NewPNErgebnis(lits []string) (PNErgebnis, error) {
 	args6 := 16
 	args7 := 19
 	if len(lits) != args6 && len(lits) != args7 {
-		return PNErgebnis{}, fmt.Errorf("zu wenig Argumente für PNERGEBNIS, %d statt %d/%d", len(lits), args6, args7)
+		return PNErgebnis{}, fmt.Errorf("falsche Anzahl an Argumenten für PNERGEBNIS, %d statt %d/%d", len(lits), args6, args7)
 	}
 	var el PNErgebnis
 	var err1, err2, err3, err4, err5, err6, err7, err8, err9 error

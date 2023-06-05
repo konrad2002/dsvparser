@@ -11,7 +11,7 @@ type Erzeuger struct {
 func NewErzeuger(lits []string) (Erzeuger, error) {
 	args := 3
 	if len(lits) != args {
-		return Erzeuger{}, fmt.Errorf("zu wenig Argumente für ERZEUGER, %d statt %d", len(lits), args)
+		return Erzeuger{}, fmt.Errorf("falsche Anzahl an Argumenten für ERZEUGER, %d statt %d", len(lits), args)
 	}
 	var el Erzeuger
 	el.Software = lits[0]

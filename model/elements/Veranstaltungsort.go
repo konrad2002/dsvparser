@@ -16,7 +16,7 @@ type Veranstaltungsort struct {
 func NewVeranstaltungsort(lits []string) (Veranstaltungsort, error) {
 	args := 8
 	if len(lits) != args {
-		return Veranstaltungsort{}, fmt.Errorf("zu wenig Argumente für VERANSTALTUNGSORT, %d statt %d", len(lits), args)
+		return Veranstaltungsort{}, fmt.Errorf("falsche Anzahl an Argumenten für VERANSTALTUNGSORT, %d statt %d", len(lits), args)
 	}
 	var el Veranstaltungsort
 	el.NameSchwimmhalle = lits[0]

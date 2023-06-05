@@ -16,7 +16,7 @@ type Meldeadresse struct {
 func NewMeldeadresse(lits []string) (Meldeadresse, error) {
 	args := 8
 	if len(lits) != args {
-		return Meldeadresse{}, fmt.Errorf("zu wenig Argumente für MELDEADRESSE, %d statt %d", len(lits), args)
+		return Meldeadresse{}, fmt.Errorf("falsche Anzahl an Argumenten für MELDEADRESSE, %d statt %d", len(lits), args)
 	}
 	var el Meldeadresse
 	el.Name = lits[0]

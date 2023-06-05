@@ -14,7 +14,7 @@ type Nachweis struct {
 func NewNachweis(lits []string) (Nachweis, error) {
 	args := 3
 	if len(lits) != args {
-		return Nachweis{}, fmt.Errorf("zu wenig Argumente für NACHWEIS, %d statt %d", len(lits), args)
+		return Nachweis{}, fmt.Errorf("falsche Anzahl an Argumenten für NACHWEIS, %d statt %d", len(lits), args)
 	}
 	var el Nachweis
 	var err error
