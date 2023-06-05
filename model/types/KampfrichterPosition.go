@@ -24,3 +24,7 @@ const (
 	ORDNERVERSORGUNGSSTELLE = "VER"
 	SONSTIGE                = "ZBV"
 )
+
+func NewKampfrichterPosition(value string) KampfrichterPosition {
+	return KampfrichterPosition(value)
+}

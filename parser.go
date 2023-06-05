@@ -26,6 +26,8 @@ func (p *Parser) Parse() (el interface{}, err error) {
 		el, err = elements.NewAbschnitt(lits)
 	case AUSRICHTER:
 		el, err = elements.NewAusrichter(lits)
+	case AUSSCHREIBUNGIMNETZ:
+		el, err = elements.NewAusschreibungImNetz(lits)
 	case FORMAT:
 		el, err = elements.NewFormat(lits)
 	// TODO: fehlende Elemente
