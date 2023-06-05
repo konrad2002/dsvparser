@@ -28,6 +28,11 @@ Im Rahmen der Entwicklung von [SwimResults](https://swimresults.de) kam Bedarf f
 
 ## 📄 Changelogs
 
+### v0.1.0
+
+- erste Implementierung für Parser, Scanner und Reader
+- kann nun Wettkampfdefinitionslisten und Wettkampfergebnislisten parsen
+
 ### v0.0.3
 
 - make importable using `import "github.com/konrad2002/dsvparser"`
