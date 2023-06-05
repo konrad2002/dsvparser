@@ -44,6 +44,12 @@ func (s *Scanner) Scan() (tok Token, lit []string) {
 		if ch == ':' {
 			break
 		}
+		if ch == '\n' {
+			if NewToken(buf.String()) == DATEIENDE {
+				return DATEIENDE, nil
+			}
+			return EMPTY, nil
+		}
 		if ch == '*' && lc == '(' {
 			for {
 				if ch = s.read(); ch == eof || ch == '\n' {

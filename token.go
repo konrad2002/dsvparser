@@ -6,6 +6,7 @@ const (
 	ILLEGAL Token = iota
 	EOF
 	COMMENT
+	EMPTY
 
 	ABSCHNITT
 	AUSRICHTER

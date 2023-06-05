@@ -21,7 +21,7 @@ func (p *Parser) Parse() (el interface{}, err error) {
 		return nil, fmt.Errorf("scanned illegal token")
 	}
 
-	fmt.Printf("scanned: %d\n", tok)
+	//fmt.Printf("scanned: %d\n", tok)
 
 	switch tok {
 	case ABSCHNITT:
@@ -56,6 +56,8 @@ func (p *Parser) Parse() (el interface{}, err error) {
 		el, err = elements.NewPNReaktion(lits)
 	case PNZWISCHENZEIT:
 		el, err = elements.NewPNZwischenzeit(lits)
+	case STABLOESE, STAFFELPERSON, STZWISCHENZEIT, STERGEBNIS:
+		el, err = nil, nil
 	case VERANSTALTER:
 		el, err = elements.NewVeranstalter(lits)
 	case VERANSTALTUNG:
@@ -70,7 +72,7 @@ func (p *Parser) Parse() (el interface{}, err error) {
 		el, err = elements.NewWettkampf(lits)
 	case DATEIENDE:
 		el, err = elements.NewDateiende()
-	case COMMENT:
+	case COMMENT, EMPTY:
 		el, err = nil, nil
 	case EOF:
 		el, err = nil, fmt.Errorf("unerwartetes dateiende")

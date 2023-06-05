@@ -5,6 +5,7 @@ import (
 	"github.com/konrad2002/dsvparser/model"
 	"github.com/konrad2002/dsvparser/model/elements"
 	"io"
+	"strings"
 )
 
 type Reader struct {
@@ -45,14 +46,14 @@ func (r *Reader) Read() (model.Liste, error) {
 
 	var list model.Liste
 
-	switch r.format.Listart {
-	case "Wettkampfdefinitionsliste":
+	switch strings.ToLower(r.format.Listart) {
+	case "wettkampfdefinitionsliste":
 		list = &model.Wettkampfdefinitionsliste{}
-	case "Wettkampfergebnisliste":
+	case "wettkampfergebnisliste":
 		list = &model.Wettkampfergebnisliste{}
-	case "Vereinsmeldeliste":
+	case "vereinsmeldeliste":
 		return nil, fmt.Errorf("nicht implementiert")
-	case "Vereinsergebnisliste":
+	case "vereinsergebnisliste":
 		return nil, fmt.Errorf("nicht implementiert")
 	default:
 		return nil, fmt.Errorf("ungültige Listart")
@@ -66,13 +67,11 @@ func (r *Reader) readRestOfFile(list model.Liste) (res model.Liste, err error) {
 	for {
 		el, err := r.p.Parse()
 		if err != nil {
-			fmt.Printf("error\n")
 			return res, err
 		}
 
 		// comment
 		if el == nil {
-			fmt.Printf("comment\n")
 			continue
 		}
 

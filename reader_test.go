@@ -66,7 +66,7 @@ func TestReader_Read_Definitionsliste_Type(t *testing.T) {
 }
 
 func TestReader_Read_Definitionsliste_Entries(t *testing.T) {
-	input := "(* bla *)\nFORMAT:Wettkampfdefinitionsliste;7;\nABSCHNITT:1;14.05.2023;;;09:00;;\nDATEIENDE"
+	input := "(* bla *)\nFORMAT:WettkampfdeFINItionsliste;7;\nABSCHNITT:1;14.05.2023;;;09:00;;\nDATEIENDE"
 	buf := bytes.NewBufferString(input)
 	r := NewReader(buf)
 	res, err := r.Read()
@@ -74,6 +74,28 @@ func TestReader_Read_Definitionsliste_Entries(t *testing.T) {
 		fmt.Printf(err.Error())
 	}
 	def := res.(*model.Wettkampfdefinitionsliste)
+	assert.Equal(t, 7, def.Format.Version)
+	dat, _ := types.NewDatum("14.05.2023")
+	assert.Equal(t, dat, def.Abschnitte[0].Abschnittsdatum)
+}
+
+func TestReader_Read_Ergebnisliste_Type(t *testing.T) {
+	input := "(* bla *)\nFORMAT:WETTKAMPFERGEBNISLISTE;7;\nABSCHNITT:1;14.05.2023;;;09:00;;\nDATEIENDE"
+	buf := bytes.NewBufferString(input)
+	r := NewReader(buf)
+	res, _ := r.Read()
+	assert.IsType(t, &model.Wettkampfergebnisliste{}, res)
+}
+
+func TestReader_Read_Ergebnisliste_Entries(t *testing.T) {
+	input := "(* bla *)\nFORMAT:WETTKAMPFERGEBNISliste;7;\nABSCHNITT:1;14.05.2023;;;09:00;;\nDATEIENDE"
+	buf := bytes.NewBufferString(input)
+	r := NewReader(buf)
+	res, err := r.Read()
+	if err != nil {
+		fmt.Printf(err.Error())
+	}
+	def := res.(*model.Wettkampfergebnisliste)
 	assert.Equal(t, 7, def.Format.Version)
 	dat, _ := types.NewDatum("14.05.2023")
 	assert.Equal(t, dat, def.Abschnitte[0].Abschnittsdatum)

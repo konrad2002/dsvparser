@@ -17,9 +17,9 @@ type Abschnitt struct {
 }
 
 func NewAbschnitt(lits []string) (Abschnitt, error) {
-	args := 6
-	if len(lits) != args {
-		return Abschnitt{}, fmt.Errorf("falsche Anzahl an Argumenten für ABSCHNITT, %d statt %d", len(lits), args)
+	args1, args2 := 6, 4
+	if len(lits) != args1 && len(lits) != args2 {
+		return Abschnitt{}, fmt.Errorf("falsche Anzahl an Argumenten für ABSCHNITT, %d statt %d/%d", len(lits), args1, args2)
 	}
 	var el Abschnitt
 	var err, err1, err2 error
@@ -30,10 +30,12 @@ func NewAbschnitt(lits []string) (Abschnitt, error) {
 	}
 
 	el.Abschnittsdatum, err1 = types.NewDatum(lits[1])
-	el.Einlass, _ = types.NewUhrzeit(lits[2])
-	el.Kampfrichtersitzung, _ = types.NewUhrzeit(lits[3])
-	el.Anfangszeit, err2 = types.NewUhrzeit(lits[4])
-	el.RelativeAngabe = lits[5] == "J"
+	if len(lits) == 6 {
+		el.Einlass, _ = types.NewUhrzeit(lits[2])
+		el.Kampfrichtersitzung, _ = types.NewUhrzeit(lits[3])
+	}
+	el.Anfangszeit, err2 = types.NewUhrzeit(lits[len(lits)-2])
+	el.RelativeAngabe = lits[len(lits)-1] == "J"
 
 	err = errors.Join(err1, err2)
 
