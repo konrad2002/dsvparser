@@ -21,7 +21,7 @@ Das Package darf von jedem uneingeschränkt für kommerzielle und nicht-kommerzi
 Importieren des Packages:
 
 ```sh
-go get github.com/konrad2002/dsvparser@v1.0.0
+go get github.com/konrad2002/dsvparser@v1.1.0
 ```
 
 ### Beispiel
@@ -40,13 +40,17 @@ func VeranstaltungsortPlz() string {
 	if err != nil {
 		panic(err)
 	}
+	
 	buf := bytes.NewBuffer(dat)
 	r := parser.NewReader(buf)
+	
 	res, err := r.Read()
 	if err != nil {
 		panic(err)
 	}
+	
 	def := res.(*model.Wettkampfdefinitionsliste)
+	
 	return def.Veranstaltungsort.PLZ
 }
 
@@ -63,6 +67,10 @@ Die Spezifikationen das DSV7 Standards lassen sich [🔗 hier](https://www.dsv.d
 Im Rahmen der Entwicklung von [SwimResults](https://swimresults.de) kam Bedarf für einen DSV7 Parser auf, welcher in diesem Repository unabhängig von SwimResults implementiert wird.
 
 ## 📄 Changelogs
+
+### v1.1.0
+
+- Behebt einen Bug, bei dem einige Methoden nicht `public` waren
 
 ### v1.0.0
 
