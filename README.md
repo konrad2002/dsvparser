@@ -10,7 +10,7 @@ Die aktuelle Version soll die Standards DSV6 und DSV7 unterstützen.
 ## 💻 Entwicklung
 
 Dieses Projekt befindet sich momentan in der Entwicklung und viele Funktionen fehlen aktuell noch.
-Zum Mitwirken am Projekt können entweder Pull Requests gestellt werden oder @konrad2002 kontaktiert werden.
+Zum Mitwirken am Projekt können entweder Pull Requests gestellt werden oder [@konrad2002](https://weiss-konrad.de) kontaktiert werden.
 
 ## 📥 Nutzung
 
@@ -26,7 +26,7 @@ go get github.com/konrad2002/dsvparser@v1.1.0
 
 ### Beispiel
 
-Verwendung zum Parsen von lokaler DSV7 Datei und Auslesen des Veranstalters:
+Verwendung zum Parsen von lokaler DSV7 Datei und Auslesen der PLZ des Veranstaltungsortes:
 
 ```go
 import (
