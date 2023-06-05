@@ -16,6 +16,42 @@ Zum Mitwirken am Projekt können entweder Pull Requests gestellt werden oder @ko
 
 Das Package darf von jedem uneingeschränkt für kommerzielle und nicht-kommerzielle Projekte verwendet werden.
 
+### Installation
+
+Importieren des Packages:
+
+```sh
+go get github.com/konrad2002/dsvparser@v1.0.0
+```
+
+### Beispiel
+
+Verwendung zum Parsen von lokaler DSV7 Datei und Auslesen des Veranstalters:
+
+```go
+import (
+	// ...
+	"github.com/konrad2002/dsvparser/model"
+	"github.com/konrad2002/dsvparser/parser"
+)
+
+func VeranstaltungsortPlz() string {
+	dat, err := os.ReadFile("definition.dsv7")
+	if err != nil {
+		panic(err)
+	}
+	buf := bytes.NewBuffer(dat)
+	r := parser.NewReader(buf)
+	res, err := r.Read()
+	if err != nil {
+		panic(err)
+	}
+	def := res.(*model.Wettkampfdefinitionsliste)
+	return def.Veranstaltungsort.PLZ
+}
+
+```
+
 ## 📋 Standard
 
 Der DSV7 Standard wurde vom Deutschen Schwimm-Verband e.V. (DSV) mit Gültigkeit ab 1.1.2023 herausgegeben und ersetzt damit den vorherigen DSV6 Standard.
