@@ -12,6 +12,24 @@ Die aktuelle Version soll die Standards DSV6 und DSV7 unterstützen.
 Dieses Projekt befindet sich momentan in der Entwicklung und viele Funktionen fehlen aktuell noch.
 Zum Mitwirken am Projekt können entweder Pull Requests gestellt werden oder [@konrad2002](https://weiss-konrad.de) kontaktiert werden.
 
+### Funktionen
+
+Gegenwärtig werden folgende Listentypen und DSV Dateiversionen unterstützt
+
+| **Listenart**             | **DSV6** | **DSV7** |
+|---------------------------|----------|----------|
+| Wettkampfdefinitionsliste | 🟩       | 🟩       |
+| Vereinsmeldeliste         | 🟥       | 🟥       |
+| Wettkampfergebnisliste    | 🟦       | 🟨       |
+| Vereinsergebnisliste      | 🟥       | 🟥       |
+
+🟩 ... unterstützt (getestet)
+🟦 ... unterstützt (nicht getestet)
+🟨 ... teilweise unterstützt
+🟥 ... nicht unterstützt
+
+Bei Wettkampfergebnislisten werden aktuell *KEINE* Staffeln unterstützt.
+
 ## 📥 Nutzung
 
 Das Package darf von jedem uneingeschränkt für kommerzielle und nicht-kommerzielle Projekte verwendet werden.
