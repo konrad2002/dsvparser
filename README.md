@@ -23,10 +23,10 @@ Gegenwärtig werden folgende Listentypen und DSV Dateiversionen unterstützt
 | Wettkampfergebnisliste    | 🟦       | 🟨       |
 | Vereinsergebnisliste      | 🟥       | 🟥       |
 
-🟩 ... unterstützt (getestet)
-🟦 ... unterstützt (nicht getestet)
-🟨 ... teilweise unterstützt
-🟥 ... nicht unterstützt
+- 🟩 - unterstützt (getestet)
+- 🟦 - unterstützt (nicht getestet)
+- 🟨 - teilweise unterstützt
+- 🟥 - nicht unterstützt
 
 Bei Wettkampfergebnislisten werden aktuell *KEINE* Staffeln unterstützt.
 
