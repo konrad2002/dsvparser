@@ -24,4 +24,4 @@ type PNErgebnis struct {
 	Nationalitaet3             string
 }
 
-// TODO constructor
+// TODO: constructor

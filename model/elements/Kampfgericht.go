@@ -9,4 +9,4 @@ type Kampfgericht struct {
 	Verein           string
 }
 
-// TODO constructor
+// TODO: constructor

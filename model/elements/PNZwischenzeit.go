@@ -10,4 +10,4 @@ type PNZwischenzeit struct {
 	Zwischenzeit              types.Zeit
 }
 
-// TODO constructor
+// TODO: constructor

@@ -10,4 +10,4 @@ type PNReaktion struct {
 	Reaktionszeit             types.Zeit
 }
 
-// TODO constructor
+// TODO: constructor

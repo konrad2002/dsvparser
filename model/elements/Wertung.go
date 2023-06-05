@@ -13,4 +13,4 @@ type Wertung struct {
 	Wertungsname    string
 }
 
-// TODO constructor
+// TODO: constructor

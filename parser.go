@@ -28,7 +28,7 @@ func (p *Parser) Parse() (el interface{}, err error) {
 		el, err = elements.NewAusrichter(lits)
 	case FORMAT:
 		el, err = elements.NewFormat(lits)
-	// TODO fehlende Elemente
+	// TODO: fehlende Elemente
 	case DATEIENDE:
 		el, err = elements.NewDateiende()
 	case COMMENT:

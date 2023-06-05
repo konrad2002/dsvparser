@@ -6,4 +6,4 @@ type Bankverbindung struct {
 	BIC      string
 }
 
-// TODO constructor
+// TODO: constructor

@@ -4,4 +4,4 @@ type Besonderes struct {
 	Anmerkungen string
 }
 
-// TODO constructor
+// TODO: constructor

@@ -6,4 +6,4 @@ type Erzeuger struct {
 	Kontakt  string
 }
 
-// TODO constructor
+// TODO: constructor

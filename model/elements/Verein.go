@@ -7,4 +7,4 @@ type Verein struct {
 	FinaNationenkuerzel  string
 }
 
-// TODO constructor
+// TODO: constructor

@@ -11,4 +11,4 @@ type Veranstaltungsort struct {
 	Email            string
 }
 
-// TODO constructor
+// TODO: constructor

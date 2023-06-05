@@ -10,4 +10,4 @@ type Nachweis struct {
 	Bahnlaenge  string
 }
 
-// TODO constructor
+// TODO: constructor

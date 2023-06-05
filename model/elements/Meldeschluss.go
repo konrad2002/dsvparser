@@ -7,4 +7,4 @@ type Meldeschluss struct {
 	Uhrzeit types.Uhrzeit
 }
 
-// TODO constructor
+// TODO: constructor

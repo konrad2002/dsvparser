@@ -11,4 +11,4 @@ type Meldeadresse struct {
 	Email   string
 }
 
-// TODO constructor
+// TODO: constructor

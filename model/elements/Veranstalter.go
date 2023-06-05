@@ -4,4 +4,4 @@ type Veranstalter struct {
 	Name string
 }
 
-// TODO constructor
+// TODO: constructor

@@ -7,4 +7,4 @@ type Veranstaltung struct {
 	Zeitmessung               string
 }
 
-// TODO constructor
+// TODO: constructor

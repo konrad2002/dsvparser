@@ -16,4 +16,4 @@ type Wettkampf struct {
 	Qualifikationswettkampfart    rune
 }
 
-// TODO constructor
+// TODO: constructor
