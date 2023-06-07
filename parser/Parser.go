@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/konrad2002/dsvparser/model/elements"
 	"io"
+	"strings"
 )
 
 type Parser struct {
@@ -22,6 +23,10 @@ func (p *Parser) Parse() (el interface{}, err error) {
 	}
 
 	//fmt.Printf("scanned: %d\n", tok)
+
+	for i, lit := range lits {
+		lits[i] = strings.Trim(lit, " ")
+	}
 
 	switch tok {
 	case ABSCHNITT:

@@ -1,5 +1,7 @@
 package parser
 
+import "strings"
+
 type Token int
 
 const (
@@ -38,6 +40,8 @@ const (
 )
 
 func NewToken(value string) (tok Token) {
+	value = strings.Trim(value, " ")
+	value = strings.Trim(value, "\r")
 	switch value {
 	case "FORMAT":
 		tok = FORMAT

@@ -59,3 +59,19 @@ func Test_BeispielMarienberg_Ergebnisliste(t *testing.T) {
 	assert.Equal(t, "Olbernhau", erg.Ausrichter.Ort)
 	assert.Equal(t, 429663, erg.PNErgebnisse[4].DsvId)
 }
+
+func Test_BeispielIESC_Ergebnisliste(t *testing.T) {
+	dat, err := os.ReadFile("assets/Ergebnisdatei.dsv6")
+	if err != nil {
+		panic(err)
+	}
+	buf := bytes.NewBuffer(dat)
+	r := parser.NewReader(buf)
+	res, err := r.Read()
+	if err != nil {
+		fmt.Printf(err.Error())
+	}
+	erg := res.(*model.Wettkampfergebnisliste)
+	assert.Equal(t, 6, erg.Format.Version)
+	assert.Equal(t, "", erg.Ausrichter.Ort)
+}
