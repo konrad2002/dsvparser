@@ -39,7 +39,7 @@ Das Package darf von jedem uneingeschränkt für kommerzielle und nicht-kommerzi
 Importieren des Packages:
 
 ```sh
-go get github.com/konrad2002/dsvparser@v1.2.0
+go get github.com/konrad2002/dsvparser@v1.2.1
 ```
 
 ### Beispiel
