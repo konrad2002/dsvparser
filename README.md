@@ -74,6 +74,8 @@ func VeranstaltungsortPlz() string {
 
 ```
 
+Ein umfangreicheres Beispiel mit Definitions- und Ergebnislisten kann hier gefunden werden: [SwimResults DSV Importer](https://github.com/SwimResults/import-service/blob/master/importer/dsv_importer.go)
+
 ## 📋 Standard
 
 Der DSV7 Standard wurde vom Deutschen Schwimm-Verband e.V. (DSV) mit Gültigkeit ab 1.1.2023 herausgegeben und ersetzt damit den vorherigen DSV6 Standard.
