@@ -7,6 +7,8 @@
 Dieses Go "Package" enthält einen Parser für das Datenaustauschdateiformat des Deutschen Schwimm-Verband e.V. (DSV).
 Die aktuelle Version soll die Standards DSV6 und DSV7 unterstützen.
 
+If you are looking for a parser for the LENEX file format, check [konrad2002/lenexparser](https://github.com/konrad2002/lenexparser).
+
 ## 💻 Entwicklung
 
 Dieses Projekt befindet sich momentan in der Entwicklung und viele Funktionen fehlen aktuell noch.
