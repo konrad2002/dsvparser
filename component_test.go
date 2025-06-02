@@ -222,7 +222,7 @@ func calcEsbjergPoints(file string, preAgesGirls [2]int, preAgesBoys [2]int) {
 
 	pointsByGroupedTeams := map[string]int{}
 
-	for team, _ := range pointsPerTeam {
+	for team := range pointsPerTeam {
 		groupTeam := getGroupTeamByTeamName(team)
 		pointsByGroupedTeams[groupTeam] = 0
 	}
