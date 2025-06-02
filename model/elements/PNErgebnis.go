@@ -14,7 +14,7 @@ type PNErgebnis struct {
 	Platz                      int
 	GrundDerNichtwertung       string
 	Name                       string
-	DsvId                      string
+	DsvId                      int
 	VeranstaltungsIdSchwimmer  int
 	Geschlecht                 types.Geschlecht
 	Jahrgang                   int
@@ -44,7 +44,7 @@ func NewPNErgebnis(lits []string) (PNErgebnis, error) {
 	el.Platz, err3 = strconv.Atoi(lits[3])
 	el.GrundDerNichtwertung = lits[4]
 	el.Name = lits[5]
-	el.DsvId = lits[6]
+	el.DsvId, err4 = strconv.Atoi(lits[6])
 	el.VeranstaltungsIdSchwimmer, err5 = strconv.Atoi(lits[7])
 	if len(lits[8]) > 0 {
 		el.Geschlecht = types.NewGeschlecht([]rune(lits[8])[0])
