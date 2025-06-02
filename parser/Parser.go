@@ -61,7 +61,13 @@ func (p *Parser) Parse() (el interface{}, err error) {
 		el, err = elements.NewPNReaktion(lits)
 	case PNZWISCHENZEIT:
 		el, err = elements.NewPNZwischenzeit(lits)
-	case STABLOESE, STAFFELPERSON, STZWISCHENZEIT, STERGEBNIS:
+	case STERGEBNIS:
+		el, err = elements.NewSTErgebnis(lits)
+		if err != nil {
+			println("STERGEBNIS ERROR")
+			println(lits[0])
+		}
+	case STABLOESE, STAFFELPERSON, STZWISCHENZEIT:
 		el, err = nil, nil
 	case VERANSTALTER:
 		el, err = elements.NewVeranstalter(lits)
