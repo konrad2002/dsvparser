@@ -20,13 +20,12 @@ Gegenwärtig werden folgende Listentypen und DSV Dateiversionen unterstützt
 
 | **Listenart**             | **DSV6** | **DSV7** |
 |---------------------------|----------|----------|
-| Wettkampfdefinitionsliste | 🟦       | 🟩       |
+| Wettkampfdefinitionsliste | 🟩       | 🟩       |
 | Vereinsmeldeliste         | 🟥       | 🟥       |
-| Wettkampfergebnisliste    | 🟨       | 🟨       |
+| Wettkampfergebnisliste    | 🟩       | 🟩       |
 | Vereinsergebnisliste      | 🟥       | 🟥       |
 
-- 🟩 - unterstützt (getestet)
-- 🟦 - unterstützt (nicht getestet)
+- 🟩 - unterstützt
 - 🟨 - teilweise unterstützt
 - 🟥 - nicht unterstützt
 
@@ -89,6 +88,10 @@ Die Spezifikationen das DSV7 Standards lassen sich [🔗 hier](https://www.dsv.d
 Im Rahmen der Entwicklung von [SwimResults](https://swimresults.de) kam Bedarf für einen DSV7 Parser auf, welcher in diesem Repository unabhängig von SwimResults implementiert wird.
 
 ## 📄 Changelogs
+
+### v1.3.0
+
+- Unterstützung von Staffeln in Wettkampfergebnislisten
 
 ### v1.1.0 & v1.2.0
 
