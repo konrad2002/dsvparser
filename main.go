@@ -3,9 +3,10 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"os"
+
 	"github.com/konrad2002/dsvparser/model"
 	"github.com/konrad2002/dsvparser/parser"
-	"os"
 )
 
 func main() {
@@ -13,7 +14,7 @@ func main() {
 }
 
 func BeispielNutzung() {
-	dat, err := os.ReadFile("assets/definition.dsv7")
+	dat, err := os.ReadFile("assets/sdm26.dsv7")
 	if err != nil {
 		panic(err)
 	}
@@ -23,6 +24,10 @@ func BeispielNutzung() {
 	if err != nil {
 		panic(err)
 	}
-	def := res.(*model.Wettkampfdefinitionsliste)
-	fmt.Printf(def.Veranstaltungsort.PLZ)
+	def := res.(*model.Wettkampfergebnisliste)
+	fmt.Printf(def.Veranstaltung.Veranstaltungsort)
+
+	for _, p := range def.StaffelPerson {
+		fmt.Printf("\n%s %s", p.Name, p.StartnummerSchwimmerStaffel)
+	}
 }

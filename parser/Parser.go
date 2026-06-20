@@ -2,9 +2,10 @@ package parser
 
 import (
 	"fmt"
-	"github.com/konrad2002/dsvparser/model/elements"
 	"io"
 	"strings"
+
+	"github.com/konrad2002/dsvparser/model/elements"
 )
 
 type Parser struct {
@@ -61,8 +62,14 @@ func (p *Parser) Parse() (el interface{}, err error) {
 		el, err = elements.NewPNReaktion(lits)
 	case PNZWISCHENZEIT:
 		el, err = elements.NewPNZwischenzeit(lits)
-	case STABLOESE, STAFFELPERSON, STZWISCHENZEIT, STERGEBNIS:
-		el, err = nil, nil
+	case STERGEBNIS:
+		el, err = elements.NewSTErgebnis(lits)
+	case STAFFELPERSON:
+		el, err = elements.NewStaffelPerson(lits)
+	case STZWISCHENZEIT:
+		el, err = elements.NewSTZwischenzeit(lits)
+	case STABLOESE:
+		el, err = elements.NewSTAbloese(lits)
 	case VERANSTALTER:
 		el, err = elements.NewVeranstalter(lits)
 	case VERANSTALTUNG:

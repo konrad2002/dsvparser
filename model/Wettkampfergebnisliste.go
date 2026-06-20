@@ -16,6 +16,10 @@ type Wettkampfergebnisliste struct {
 	PNErgebnisse      []elements.PNErgebnis
 	PNZwischenzeiten  []elements.PNZwischenzeit
 	PNReaktionszeiten []elements.PNReaktion
+	STErgebnis        []elements.STErgebnis
+	StaffelPerson     []elements.StaffelPerson
+	STZwischenzeit    []elements.STZwischenzeit
+	STAbloese         []elements.STAbloese
 }
 
 func (w *Wettkampfergebnisliste) AddElement(e interface{}) {
@@ -46,5 +50,14 @@ func (w *Wettkampfergebnisliste) AddElement(e interface{}) {
 		w.PNZwischenzeiten = append(w.PNZwischenzeiten, v)
 	case elements.PNReaktion:
 		w.PNReaktionszeiten = append(w.PNReaktionszeiten, v)
+	case elements.STErgebnis:
+		w.STErgebnis = append(w.STErgebnis, v)
+	case elements.StaffelPerson:
+		w.StaffelPerson = append(w.StaffelPerson, v)
+	case elements.STZwischenzeit:
+		w.STZwischenzeit = append(w.STZwischenzeit, v)
+	case elements.STAbloese:
+		w.STAbloese = append(w.STAbloese, v)
 	}
+
 }
