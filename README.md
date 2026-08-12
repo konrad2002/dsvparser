@@ -5,7 +5,7 @@
 <img src="dsvparser.png" align="right" alt="dsvparser logo" width="175">
 
 Dieses Go "Package" enthält einen Parser für das Datenaustauschdateiformat des Deutschen Schwimm-Verband e.V. (DSV).
-Die aktuelle Version soll die Standards DSV6 und DSV7 unterstützen.
+Die aktuelle Version soll die Standards DSV6, DSV7 und DSV8 unterstützen.
 
 If you are looking for a parser for the LENEX file format, check [konrad2002/lenexparser](https://github.com/konrad2002/lenexparser).
 
@@ -18,12 +18,12 @@ Zum Mitwirken am Projekt können entweder Pull Requests gestellt werden oder [@k
 
 Gegenwärtig werden folgende Listentypen und DSV Dateiversionen unterstützt
 
-| **Listenart**             | **DSV6** | **DSV7** |
-|---------------------------|----------|----------|
-| Wettkampfdefinitionsliste | 🟩       | 🟩       |
-| Vereinsmeldeliste         | 🟥       | 🟥       |
-| Wettkampfergebnisliste    | 🟩       | 🟩       |
-| Vereinsergebnisliste      | 🟥       | 🟥       |
+| **Listenart**             | **DSV6** | **DSV7** | **DSV8** |
+|---------------------------|----------|----------|----------|
+| Wettkampfdefinitionsliste | 🟩       | 🟩       | 🟩       |
+| Vereinsmeldeliste         | 🟥       | 🟥       | 🟥       |
+| Wettkampfergebnisliste    | 🟩       | 🟩       | 🟩       |
+| Vereinsergebnisliste      | 🟥       | 🟥       | 🟥       |
 
 - 🟩 - unterstützt
 - 🟨 - teilweise unterstützt
@@ -40,7 +40,7 @@ Das Package darf von jedem uneingeschränkt für kommerzielle und nicht-kommerzi
 Importieren des Packages:
 
 ```sh
-go get github.com/konrad2002/dsvparser@v1.3.1
+go get github.com/konrad2002/dsvparser@v1.4.0
 ```
 
 ### Beispiel
@@ -79,15 +79,19 @@ Ein umfangreicheres Beispiel mit Definitions- und Ergebnislisten kann hier gefun
 
 ## 📋 Standard
 
-Der DSV7 Standard wurde vom Deutschen Schwimm-Verband e.V. (DSV) mit Gültigkeit ab 1.1.2023 herausgegeben und ersetzt damit den vorherigen DSV6 Standard.
+Der DSV8 Standard wurde vom Deutschen Schwimm-Verband e.V. (DSV) mit Gültigkeit ab 1.8.2026 herausgegeben und ersetzt damit den vorherigen DSV7 Standard.
 Dateien des DSV Standards sind UTF-8 kodierte Textdateien, welche ein Datenformat für den Informationsaustausch im deutschen Schwimmsport darstellen.
-Die Spezifikationen das DSV7 Standards lassen sich [🔗 hier](https://www.dsv.de/fileadmin/dsv/documents/Amtliche_Mitteilungen/DSV_Standard07_rot_markiete_Aenderungen.pdf) nachlesen.
+Die Spezifikationen das DSV8 Standards lassen sich [🔗 hier](https://www.dsv.de/download-file?file_code=9fbdf74a1f&file_id=10922) nachlesen.
 
 ## 🏊‍♀️ SwimResults
 
-Im Rahmen der Entwicklung von [SwimResults](https://swimresults.de) kam Bedarf für einen DSV7 Parser auf, welcher in diesem Repository unabhängig von SwimResults implementiert wird.
+Im Rahmen der Entwicklung von [SwimResults](https://swimresults.de) kam Bedarf für einen DSV Parser auf, welcher in diesem Repository unabhängig von SwimResults implementiert wird.
 
 ## 📄 Changelogs
+
+### v1.4.0
+
+- Unterstützung des DSV8 Standards
 
 ### v1.3.0
 

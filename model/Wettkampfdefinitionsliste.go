@@ -13,6 +13,7 @@ type Wettkampfdefinitionsliste struct {
 	Meldeadresse        elements.Meldeadresse
 	Meldeschluss        elements.Meldeschluss
 	Bankverbindung      elements.Bankverbindung
+	Lastschrift         elements.Lastschrift
 	Besonderes          elements.Besonderes
 	Nachweis            elements.Nachweis
 	Abschnitte          []elements.Abschnitt
@@ -44,6 +45,8 @@ func (w *Wettkampfdefinitionsliste) AddElement(e interface{}) {
 		w.Meldeschluss = v
 	case elements.Bankverbindung:
 		w.Bankverbindung = v
+	case elements.Lastschrift:
+		w.Lastschrift = v
 	case elements.Besonderes:
 		w.Besonderes = v
 	case elements.Nachweis:

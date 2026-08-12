@@ -19,6 +19,7 @@ const (
 	ERZEUGER
 	FORMAT // D,E
 	KAMPFGERICHT
+	LASTSCHRIFT
 	MELDEADRESSE
 	MELDEGELD
 	MELDESCHLUSS
@@ -81,6 +82,8 @@ func NewToken(value string) (tok Token) {
 		tok = DATEIENDE
 	case "KAMPFGERICHT":
 		tok = KAMPFGERICHT
+	case "LASTSCHRIFT":
+		tok = LASTSCHRIFT
 	case "VEREIN":
 		tok = VEREIN
 	case "PNERGEBNIS":

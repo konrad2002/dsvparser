@@ -46,6 +46,8 @@ func (p *Parser) Parse() (el interface{}, err error) {
 		el, err = elements.NewFormat(lits)
 	case KAMPFGERICHT:
 		el, err = elements.NewKampfgericht(lits)
+	case LASTSCHRIFT:
+		el, err = elements.NewLastschrift(lits)
 	case MELDEADRESSE:
 		el, err = elements.NewMeldeadresse(lits)
 	case MELDEGELD:

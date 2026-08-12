@@ -2,10 +2,11 @@ package parser
 
 import (
 	"fmt"
-	"github.com/konrad2002/dsvparser/model"
-	"github.com/konrad2002/dsvparser/model/elements"
 	"io"
 	"strings"
+
+	"github.com/konrad2002/dsvparser/model"
+	"github.com/konrad2002/dsvparser/model/elements"
 )
 
 type Reader struct {
@@ -40,7 +41,7 @@ func (r *Reader) Read() (model.Liste, error) {
 		}
 	}
 
-	if r.format.Version != 6 && r.format.Version != 7 {
+	if r.format.Version != 6 && r.format.Version != 7 && r.format.Version != 8 {
 		return nil, fmt.Errorf("version der Datei wird nicht unterstützt")
 	}
 
